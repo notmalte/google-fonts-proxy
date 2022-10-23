@@ -8,18 +8,31 @@ Simple drop-in replacement for Google Fonts, e.g. for GDPR reasons - just run th
 
 ## How-to:
 
-**Option A: Run Go binary**
+**Option A: Run Docker image**
 
 ```sh
+$ docker run \
+    -p "8080:8080" \
+    -e "EXTERNAL_URL=[url to reach proxy]" \
+    notmalte/google-fonts-proxy
+```
+
+Now the proxy is listening on `:8080`.
+
+**Option B: Build and run Go binary locally**
+
+```sh
+$ git clone https://github.com/notmalte/google-fonts-proxy.git && cd google-fonts-proxy
 $ go build
 $ EXTERNAL_URL="[url to reach proxy]" ./google-fonts-proxy
 ```
 
 Now the proxy is listening on `:8080`.
 
-**Option B: Run Docker image**
+**Option C: Build and run Docker image locally**
 
 ```sh
+$ git clone https://github.com/notmalte/google-fonts-proxy.git && cd google-fonts-proxy
 $ docker build -t google-fonts-proxy .
 $ docker run \
     -p "8080:8080" \
