@@ -11,7 +11,6 @@ processes = []
 
 [env]
   PORT = "8080"
-  GIN_MODE = "release"
   EXTERNAL_URL = "https://googlefontsproxy.fly.dev"
 
 [experimental]

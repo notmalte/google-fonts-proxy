@@ -17,6 +17,8 @@ func main() {
 		os.Exit(1)
 	}
 
+	gin.SetMode(gin.ReleaseMode)
+
 	r := gin.Default()
 
 	cssHandler := func(c *gin.Context) {
